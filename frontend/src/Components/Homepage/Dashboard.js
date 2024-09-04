@@ -196,7 +196,7 @@ const Dashboard = () => {
               <Button
                 variant="primary"
                 className="mt-2"
-                onClick={() => navigate("/prices")}
+                onClick={() => navigate("/price-comparison")}
               >
                 Compare Prices
               </Button>

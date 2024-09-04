@@ -33,7 +33,7 @@ const Inventory = () => {
   const [itemsPerPage] = useState(5); // Number of items per page
 
   const units = [
-    "kilogram",
+    "Kilogram",
     "Gram",
     "Liter",
     "Milliliter",
@@ -44,7 +44,7 @@ const Inventory = () => {
     "Carton",
   ];
 
-  const categories = ["Vegetables", "Dairy", "Fruits", "Beverages", "Snacks"];
+  const categories = ["Meat","Vegetables", "Dairy", "Fruits", "Beverages", "Snacks"];
   const expirationThreshold = 7;
 
   const [editId, setEditId] = useState(null);
@@ -278,7 +278,7 @@ const Inventory = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="inventory-container">
+    <div className="inventory-container hide-scrollbar">
       {notification.show && (
         <Alert
           variant={
@@ -343,7 +343,7 @@ const Inventory = () => {
         />
       </div>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="inventory-modal">
         <Modal.Header closeButton>
           <Modal.Title>{editId ? "Edit Item" : "Add Item"}</Modal.Title>
         </Modal.Header>

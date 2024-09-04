@@ -63,7 +63,7 @@ export const ShopListWrapper = () => {
 
   return (
     <div className="ShopListWrapper">
-      <h1>Shopping List</h1>
+      <h1 className="h1-sl">Shopping List</h1>
       <ShopListForm addItem={addItem} />
       {items.map(item =>
         item.isEditing ? (

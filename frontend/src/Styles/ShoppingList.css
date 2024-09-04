@@ -15,11 +15,7 @@ body {
   min-height: 100vh;
 }
 
-.App {
-  text-align: center;
-}
-
-h1 {
+.h1-sl {
   color: #29a847;
   margin-bottom: 0.5rem;
   font-size: 1.75rem;

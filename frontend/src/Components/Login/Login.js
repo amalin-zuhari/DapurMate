@@ -309,7 +309,7 @@ function Login() {
             <Components.RightOverlayPanel signinIn={signIn}>
               <Components.Title>Hello, Friend!</Components.Title>
               <Components.Paragraph>
-                Enter Your personal details and start journey <br /> with us
+                Enter Your personal details and start journey with us
               </Components.Paragraph>
               <Components.GhostButton onClick={() => handleFormSwitch(false)}>
                 Sign Up

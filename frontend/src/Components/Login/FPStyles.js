@@ -6,11 +6,11 @@ export const AppWrapper = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #f6f5f7; // Keeping the background consistent with the login page
+  background: #fff; // Keeping the background consistent with the login page
 `;
 
 export const Container = styled.div`
-  background-color: #fff;
+  background-color: #fff !important;
   border-radius: 20px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;

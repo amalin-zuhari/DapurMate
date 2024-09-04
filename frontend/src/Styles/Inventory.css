@@ -78,3 +78,13 @@ button {
 .text-danger {
   color: #dc3545 !important; /* Bootstrap danger text color */
 }
+
+.inventory-modal .modal-content {
+  text-align: left;
+  margin-top: 10px !important;
+}
+/* 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera 
+} 
+*/

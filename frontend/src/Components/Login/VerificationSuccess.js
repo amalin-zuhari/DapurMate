@@ -13,7 +13,7 @@ function VerificationSuccess() {
   const navigate = useNavigate();
 
   const handleProceed = () => {
-    navigate("/inventory", { replace: true }); // Redirect to the inventory page after successful verification
+    navigate("/dashboard", { replace: true }); // Redirect to the inventory page after successful verification
   };
 
   return (

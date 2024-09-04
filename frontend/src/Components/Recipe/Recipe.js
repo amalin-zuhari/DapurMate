@@ -78,7 +78,7 @@ const Recipe = () => {
         <div className="recipe-container">
             {/* Container div for the Recipe component with a class name */}
 
-            <h1>Our Delicious Recipes</h1>
+            <h1 className="h1-recipe">Our Delicious Recipes</h1>
             {/* Header for the recipes page */}
 
             {/* Search, Filter, and Add Recipe Section */}
