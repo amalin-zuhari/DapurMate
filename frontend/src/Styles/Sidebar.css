@@ -1,183 +1,205 @@
-/* Importing Google Font 'Lilita One' for use in the sidebar logo text */
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+/* Global Layout */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw; /* Ensure full width for the app */
+  overflow: hidden;
+}
 
-/* Main sidebar styling */
+/* Sidebar Styling */
 .sidebar-main {
-  background-color: white; /* Sidebar background color */
-  height: 100%; /* Full height to cover the viewport */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow effect on the right edge */
-  display: flex; /* Flexbox layout for inner content management */
-  flex-direction: column; /* Arrange inner content in a column */
-  justify-content: space-between; /* Space out items vertically */
-  transition: width 0.3s ease, left 0.3s ease; /* Smooth width and position transition for toggle effect */
-  position: fixed; /* Fixed positioning to remain in view on scroll */
-  left: 0; /* Align sidebar to the left of the viewport */
-  top: 0; /* Align sidebar to the top of the viewport */
-  z-index: 1000; /* High z-index to ensure the sidebar appears above other content */
-  width: 200px; /* Default width when the sidebar is expanded */
+  background-color: white;
+  width: 200px; /* Fixed sidebar width */
+  position: fixed;
+  height: 100vh; /* Full height of the viewport */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000; /* Ensure sidebar stays on top */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sidebar shadow */
+  transition: width 0.3s ease; /* Smooth transition for collapsing/expanding */
+  overflow: hidden;
 }
 
+/* Expanded Sidebar */
+.sidebar-main.expanded {
+  width: 200px;
+}
+
+/* Collapsed Sidebar */
 .sidebar-main.collapsed {
-  width: 80px; /* Reduced width when the sidebar is collapsed */
+  width: 60px; /* Narrower sidebar width when collapsed */
 }
 
+/* Sidebar Logo and Text Styling */
 .logo-text-container {
-  display: flex; /* Flexbox to center content */
-  justify-content: center; /* Horizontally center the logo text */
-  align-items: center; /* Vertically center the logo text */
-  height: 80px; /* Height matches the sidebar width when collapsed */
-  width: 100%; /* Full width for centering */
-  margin-top: 20px; /* Margin to add space at the top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .logo-text {
-  font-family: 'Lilita One', cursive; /* Font style from Google Fonts */
-  font-size: 2rem; /* Font size */
-  color: #29a847; /* Text color */
-  text-align: center; /* Center text horizontally */
+  font-family: 'Lilita One', cursive;
+  font-size: 2rem;
+  color: #29a847;
+  text-align: center;
 }
 
 .logo-text-collapsed {
-  font-family: 'Lilita One', cursive; /* Same font style */
-  font-size: 1rem; /* Smaller font size for collapsed state */
-  color: #29a847; /* Text color */
-  transform: rotate(-90deg); /* Rotate text 90 degrees for vertical alignment */
-  transform-origin: center; /* Rotate around the center */
-  white-space: nowrap; /* Prevent text wrapping */
-  text-align: center; /* Center text horizontally */
-  margin: 0; /* Remove any default margin */
-  line-height: 80px; /* Align text vertically */
-  width: 80px; /* Width matches the sidebar when collapsed */
-  display: flex; /* Flexbox for centering */
-  justify-content: center; /* Center text horizontally */
-  align-items: center; /* Center text vertically */
+  font-family: 'Lilita One', cursive;
+  font-size: 1rem;
+  color: #29a847;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0;
+  line-height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sidebar-logo-container {
-  display: flex; /* Flexbox for centering */
-  justify-content: center; /* Horizontally center the logo */
-  align-items: center; /* Vertically center the logo */
-  height: 150px; /* Set height for the logo area */
-  width: 100%; /* Full width for centering */
-  background-color: #fff; /* Background color */
-  margin-top: 20px; /* Margin for spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 20px;
 }
 
 .sidebar-logo {
-  display: block; /* Block display for centering */
-  margin: 0 auto; /* Center the image horizontally */
-  max-width: 100%; /* Ensure the image doesn't exceed the container width */
-  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  transition: width 0.3s ease, height 0.3s ease; /* Smooth resizing of logo */
 }
 
+.sidebar-logo.collapsed {
+  width: 40px;
+  height: 40px;
+}
+
+/* Sidebar Menu Styles */
 .menu-wrapper {
-  flex: 1; /* Allow menu to grow and fill space */
-  display: flex; /* Flexbox for centering */
-  justify-content: center; /* Horizontally center the menu */
-  align-items: center; /* Vertically center the menu */
-  padding: 10px 0; /* Padding for spacing */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 10px 0;
 }
 
-/* Remove underline from sidebar navigation links */
 .ant-menu-item a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit parent text color */
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Styling for hover effect on navigation links */
-.ant-menu-item a:hover {
-  color: #fff; /* Change text color on hover */
-}
-
-/* Main menu styling */
-.ant-menu {
-  background-color: rgb(255, 255, 255); /* White background */
-  border-right: none; /* Remove border on the right side */
-}
-
-/* Individual menu item styling */
-.ant-menu-item {
-  background-color: white; /* White background */
-}
-
-/* Hover effect for menu items */
 .ant-menu-item:hover {
-  background-color: #29a847; /* Background color on hover */
-  color: #fff; /* Text color on hover */
-  
+  background-color: #29a847;
+  color: #fff;
 }
 
-/* Styling for the selected menu item */
 .ant-menu-item-selected {
-  background-color: #29a847 !important; /* Background color for selected item */
-  color: #fff !important; /* Text color for selected item */
+  background-color: #29a847 !important;
+  color: #fff !important;
 }
 
-/* Footer button at the bottom of the sidebar */
+/* Sidebar Footer Button */
 .sidebar-footer-button {
-  text-align: center; /* Center the button text */
-  margin-top: auto; /* Push to the bottom of the sidebar */
-  background-color: white; /* White background */
-  border: none; /* Remove border */
-  cursor: pointer; /* Pointer cursor on hover */
-  font-size: 24px; /* Font size */
-  padding-bottom: 20px; /* Padding for spacing */
+  text-align: center;
+  margin-top: auto;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding-bottom: 20px;
 }
 
-/* Sidebar toggle button styling */
 .sidebar-toggle {
-  background-color: white; /* White background */
-  border: none; /* No border */
-  cursor: pointer; /* Pointer cursor on hover */
-  font-size: 24px; /* Font size */
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
 }
 
-/* Main content styling */
-.main-content {
-  flex: 1; /* Allow main content to grow and fill remaining space */
-  transition: margin-left 0.3s ease; /* Smooth transition for margin change */
-  margin-left: 200px; /* Default left margin when sidebar is expanded */
+/* Main Content Styling */
+.content-with-sidebar {
+  flex-grow: 1;
+  margin-left: 200px; /* Offset the sidebar width when expanded */
+  padding: 20px;
+  height: calc(100vh - 60px); /* Subtract footer height */
+  overflow-y: auto; /* Allow vertical scrolling */
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease; /* Smooth content shifting */
 }
 
-/* Main content styling when the sidebar is open */
-.main-content.sidebar-open {
-  margin-left: 200px; /* Maintain left margin when sidebar is expanded */
+.content-with-sidebar.collapsed {
+  margin-left: 60px; /* Adjust content margin when sidebar is collapsed */
 }
 
-/* Main content styling when the sidebar is collapsed */
-.main-content.sidebar-collapsed {
-  margin-left: 80px; /* Adjust left margin when sidebar is collapsed */
+.content-full {
+  flex-grow: 1;
+  margin-left: 0;
+  padding: 20px;
+  height: calc(100vh - 60px); /* Subtract footer height */
+  overflow-y: auto; /* Allow vertical scrolling */
+  box-sizing: border-box;
 }
 
-/* Media query for smaller screens */
+/* Footer Fixed at the Bottom */
+.FooterHome {
+  position: fixed;
+  bottom: 0;
+  left: 200px; /* Adjust to sidebar width */
+  width: calc(100% - 200px); /* Ensure the footer takes the remaining width */
+  height: 60px; /* Set a fixed height for the footer */
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: left 0.3s ease, width 0.3s ease; /* Smooth transition on sidebar collapse */
+}
+
+/* Adjust Footer for Collapsed Sidebar */
+.sidebar-collapsed .FooterHome {
+  left: 60px; /* Adjust footer when sidebar is collapsed */
+  width: calc(100% - 60px); /* Adjust footer width when sidebar is collapsed */
+}
+
+/* Responsive Adjustments for Smaller Screens */
 @media (max-width: 768px) {
   .sidebar-main {
-    width: 80px; /* Sidebar behaves as collapsed */
+    width: 60px; /* Narrower sidebar for small screens */
   }
 
   .sidebar-main.collapsed {
-    width: 40px; /* Further reduced width for smaller screens */
+    width: 40px; /* Sidebar collapses further on small screens */
   }
 
-  .main-content {
-    margin-left: 80px; /* Content adjusts to match sidebar collapsed state */
+  .content-with-sidebar {
+    margin-left: 60px; /* Adjust content margin for smaller sidebar */
   }
 
-  .main-content.sidebar-open {
-    margin-left: 80px; /* Maintain margin when sidebar is open on smaller screens */
+  .content-with-sidebar.collapsed {
+    margin-left: 40px; /* Adjust content margin when sidebar is collapsed on small screens */
   }
 
-  .main-content.sidebar-collapsed {
-    margin-left: 40px; /* Adjust margin for collapsed sidebar on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar-main {
-    width: 40px; /* Fully collapsed width */
+  .FooterHome {
+    left: 60px;
+    width: calc(100% - 60px); /* Adjust footer width for smaller sidebar */
   }
 
-  .main-content {
-    margin-left: 40px; /* Content adjusts fully to the right */
+  .sidebar-collapsed .FooterHome {
+    left: 40px;
+    width: calc(100% - 40px); /* Adjust footer width when sidebar is collapsed on smaller screens */
   }
 }

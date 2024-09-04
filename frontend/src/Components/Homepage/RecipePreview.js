@@ -4,12 +4,18 @@ import { Card, Row, Col, Container, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const RecipePreview = () => {
+  // State to hold the list of recipes fetched from the API
   const [recipes, setRecipes] = useState([]);
+  // State to manage the search input value
   const [searchTerm, setSearchTerm] = useState("");
+  // State to manage the selected cuisine filter
   const [selectedCuisine, setSelectedCuisine] = useState("");
+  // State to manage the selected category filter
   const [selectedCategory, setSelectedCategory] = useState("");
+  // Hook to navigate programmatically
   const navigate = useNavigate();
 
+  // Fetch recipes from the API on component mount
   useEffect(() => {
     fetch("http://localhost:5000/api/recipe")
       .then((response) => response.json())
@@ -17,28 +23,34 @@ const RecipePreview = () => {
       .catch((error) => console.error("Error fetching recipes:", error));
   }, []);
 
-  // Filter recipes based on search term, selected cuisine, selected category, and ingredients
+  // Filter recipes based on search term, selected cuisine, and selected category
   const filteredRecipes = recipes
     .filter((recipe) => {
       return (
+        // Check if the recipe title or ingredients match the search term
         (recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
           recipe.ingredients.some((ingredient) =>
             ingredient.toLowerCase().includes(searchTerm.toLowerCase())
           )) &&
+        // Check if the selected cuisine matches the recipe's cuisine or if no cuisine is selected
         (selectedCuisine === "" || recipe.cuisine === selectedCuisine) &&
+        // Check if the selected category matches the recipe's category or if no category is selected
         (selectedCategory === "" || recipe.category === selectedCategory)
       );
     })
-    .slice(0, 3); // Limit to 3 recipes
+    .slice(0, 3); // Limit the results to 3 recipes
 
-  // Get unique cuisines and categories for filtering
+  // Get unique cuisines from the list of recipes for filter options
   const cuisines = [...new Set(recipes.map((recipe) => recipe.cuisine))];
+  // Get unique categories from the list of recipes for filter options
   const categories = [...new Set(recipes.map((recipe) => recipe.category))];
 
+  // Function to handle clicking on a recipe card
   const handleClick = (id) => {
     navigate(`/recipe/${id}`);
   };
 
+  // Function to navigate to the "Add Recipe" page
   const handleAddRecipe = () => {
     navigate("/add-recipe");
   };

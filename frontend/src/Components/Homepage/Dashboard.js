@@ -7,22 +7,23 @@ import RecipePreview from "./RecipePreview";
 import Introduction from "./Introduction";
 import "../../Styles/Dashboard.css";
 
+// Dashboard component to provide an overview of the application's features
 const Dashboard = () => {
-  // Inventory state
-  const [allItems, setAllItems] = useState([]);
-  const [lowStockItems, setLowStockItems] = useState([]);
-  const [expiredItems, setExpiredItems] = useState([]);
+  // State hooks to manage inventory data
+  const [allItems, setAllItems] = useState([]); // Stores all inventory items
+  const [lowStockItems, setLowStockItems] = useState([]); // Stores items that are low in stock
+  const [expiredItems, setExpiredItems] = useState([]); // Stores items that are expired
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook to navigate between different routes
 
-  // Handle inventory data fetching
+  // Function to handle data fetching from the inventory
   const handleFetchComplete = (items) => {
-    setAllItems(items);
+    setAllItems(items); // Update the state with all fetched items
     setLowStockItems(
-      items.filter((item) => item.quantity < item.optimalStockLevel)
+      items.filter((item) => item.quantity < item.optimalStockLevel) // Filter and store low stock items
     );
     setExpiredItems(
-      items.filter((item) => new Date(item.expirationDate) < new Date())
+      items.filter((item) => new Date(item.expirationDate) < new Date()) // Filter and store expired items
     );
   };
 
@@ -31,17 +32,18 @@ const Dashboard = () => {
       {/* Introduction Section */}
       <Row className="mb-4">
         <Col>
-        <Introduction />
+          <Introduction /> {/* Render the Introduction component */}
         </Col>
       </Row>
 
       {/* Inventory Section */}
       <Row className="mb-4">
         <Col md={12}>
-          <h4 className="section-title">Inventory Overview</h4>
+          <h4 className="section-title">Inventory Overview</h4> {/* Section title */}
         </Col>
         <Col md={4}>
-          <InventoryPreview onFetchComplete={handleFetchComplete} />
+          {/* Inventory Preview */}
+          <InventoryPreview onFetchComplete={handleFetchComplete} /> {/* Render InventoryPreview component and pass handleFetchComplete as a prop */}
           <Card className="mb-4">
             <Card.Header
               className="card-header"
@@ -51,7 +53,7 @@ const Dashboard = () => {
               Total Inventory
             </Card.Header>
             <Card.Body className="inventory-card totalinv">
-              <p>{allItems.length} items</p>
+              <p>{allItems.length} items</p> {/* Display the total number of inventory items */}
             </Card.Body>
           </Card>
         </Col>
@@ -66,7 +68,7 @@ const Dashboard = () => {
               Low Stock Alerts
             </Card.Header>
             <Card.Body className="inventory-card danger">
-              <p>{lowStockItems.length} items</p>
+              <p>{lowStockItems.length} items</p> {/* Display the number of low stock items */}
             </Card.Body>
           </Card>
         </Col>
@@ -81,7 +83,7 @@ const Dashboard = () => {
               Expiration Alerts
             </Card.Header>
             <Card.Body className="inventory-card warning">
-              <p>{expiredItems.length} items</p>
+              <p>{expiredItems.length} items</p> {/* Display the number of expired items */}
             </Card.Body>
           </Card>
         </Col>
@@ -91,7 +93,7 @@ const Dashboard = () => {
             className="view-details-button"
             variant="primary"
             size="lg"
-            onClick={() => navigate("/inventory")}
+            onClick={() => navigate("/inventory")} // Navigate to the inventory page when clicked
           >
             View Inventory Details
           </Button>
@@ -101,7 +103,7 @@ const Dashboard = () => {
       {/* Shopping List Section */}
       <Row className="mb-4">
         <Col md={12}>
-          <h4 className="section-title">Current Shopping List</h4>
+          <h4 className="section-title">Current Shopping List</h4> {/* Section title */}
         </Col>
         <Col md={8}>
           <Card className="mb-2">
@@ -113,7 +115,7 @@ const Dashboard = () => {
               Your Shopping List
             </Card.Header>
             <Card.Body>
-              <ShoppingListPreview />
+              <ShoppingListPreview /> {/* Render the ShoppingListPreview component */}
             </Card.Body>
           </Card>
         </Col>
@@ -124,7 +126,7 @@ const Dashboard = () => {
               <Button
                 variant="success"
                 size="md"
-                onClick={() => navigate("/shoppinglist")}
+                onClick={() => navigate("/shopping-list")} // Navigate to the shopping list page to add items
                 className="mb-2 w-100"
               >
                 Add Items to Shopping List
@@ -132,7 +134,7 @@ const Dashboard = () => {
               <Button
                 variant="success"
                 size="md"
-                onClick={() => navigate("/shoppinglist")}
+                onClick={() => navigate("/shopping-list")} // Navigate to the shopping list page to edit items
                 className="w-100"
               >
                 Edit Shopping List
@@ -145,7 +147,7 @@ const Dashboard = () => {
       {/* Recipe Section */}
       <Row className="mb-4">
         <Col md={12}>
-          <h4 className="section-title">Recipe Quick Search</h4>
+          <h4 className="section-title">Recipe Quick Search</h4> {/* Section title */}
         </Col>
         <Col md={12}>
           <Card className="mb-4">
@@ -157,27 +159,26 @@ const Dashboard = () => {
               Find Your Favorite Recipes
             </Card.Header>
             <Card.Body>
-              <RecipePreview />
+              <RecipePreview /> {/* Render the RecipePreview component */}
             </Card.Body>
             <Col md={12} className="text-center">
-          <Button
-            className="view-details-button "
-            variant="primary"
-            size="lg"
-            onClick={() => navigate("/recipe")}
-          >
-            Show All Recipes
-          </Button>
-        </Col>
+              <Button
+                className="view-details-button "
+                variant="primary"
+                size="lg"
+                onClick={() => navigate("/recipe")} // Navigate to the recipe page when clicked
+              >
+                Show All Recipes
+              </Button>
+            </Col>
           </Card>
         </Col>
-        
       </Row>
 
       {/* Price Comparison Section */}
       <Row className="mb-4">
         <Col md={12}>
-          <h4 className="section-title">Price Comparison</h4>
+          <h4 className="section-title">Price Comparison</h4> {/* Section title */}
         </Col>
         <Col md={12}>
           <Card className="text-center">
@@ -196,7 +197,7 @@ const Dashboard = () => {
               <Button
                 variant="primary"
                 className="mt-2"
-                onClick={() => navigate("/price-comparison")}
+                onClick={() => navigate("/price-comparison")} // Navigate to the price comparison page when clicked
               >
                 Compare Prices
               </Button>

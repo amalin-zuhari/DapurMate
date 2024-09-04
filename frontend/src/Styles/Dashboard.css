@@ -1,6 +1,6 @@
 /* Dashboard.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 
 body {
@@ -9,7 +9,7 @@ body {
 
 .dapurmate{
   color: #29a847 !important;
-  font-family: 'Lilita One', cursive;
+  font-family: 'Pacifico', cursive;
   font-size: 3.5rem;
 }
 
@@ -186,14 +186,12 @@ body {
   display: block; /* Ensures the image is treated as a block element, no extra spacing */
 }
 
-.footer-dapurmate{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding-bottom: 0px;
-  color: #155724 !important;
-  
-}
+.footerhome {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #29a847;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 0; /* Ensure no top margin */
 
+}

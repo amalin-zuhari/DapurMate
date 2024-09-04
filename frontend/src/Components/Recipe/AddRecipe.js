@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 // Importing useNavigate from react-router-dom to programmatically navigate to different routes.
 
 import '../../Styles/AddRecipe.css';
+
 const AddRecipe = () => {
     // Component function that defines the AddRecipe component
 
@@ -134,7 +135,7 @@ const AddRecipe = () => {
         console.log('Data to be sent:', newRecipe);
         // Log the recipe data to the console for debugging
 
-        fetch('http://localhost:5000/recipe', {
+        fetch('http://localhost:5000/api/recipe', {
             method: 'POST',
             // Specify the HTTP method as POST
 

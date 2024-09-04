@@ -6,22 +6,31 @@ import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import "../../Styles/Login.css";
 
 function Login() {
+  // State to toggle between sign-in and sign-up forms
   const [signIn, setSignIn] = useState(true);
+  // State to hold validation errors for the form fields
   const [errors, setErrors] = useState({});
+  // State to manage form data (name, email, password)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   });
 
-  const [loginError, setLoginError] = useState(""); // State for login error message
+  // State to handle login errors (e.g., invalid credentials)
+  const [loginError, setLoginError] = useState("");
+  // State to toggle password visibility
   const [showPassword, setShowPassword] = useState(false);
+
+  // Function to toggle the visibility of the password
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
 
+  // Hook to get the navigate function for redirection
   const navigate = useNavigate();
 
+  // Function to handle changes in input fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -30,11 +39,12 @@ function Login() {
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
 
+  // Function to validate form data
   const validateForm = () => {
     const newErrors = {};
 
     if (!signIn) {
-      // Sign-up form validation
+      // Validation for sign-up form
       if (!formData.name.trim()) {
         newErrors.name = "Name is required";
       }
@@ -52,7 +62,7 @@ function Login() {
           "Password must be at least 8 characters long, include an uppercase letter, a number, and a special character.";
       }
     } else {
-      // Login form validation
+      // Validation for login form
       if (!formData.email.trim()) {
         newErrors.email = "Email is required";
       } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
@@ -64,19 +74,23 @@ function Login() {
     }
 
     setErrors(newErrors);
+    // Return true if there are no errors
     return Object.keys(newErrors).length === 0;
   };
 
+  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoginError("");
-    if (!validateForm()) return;
+    if (!validateForm()) return; // Exit if form validation fails
 
+    // Determine the API URL based on the form type (sign-in or sign-up)
     const url = signIn
       ? "http://localhost:5000/api/auth/login"
       : "http://localhost:5000/api/auth/register";
 
     try {
+      // Make a POST request to the API with the form data
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -105,7 +119,7 @@ function Login() {
 
       console.log(signIn ? "Logged in:" : "Registered:", data);
 
-      // If it's a sign-up, redirect to Verify Your Email page
+      // Redirect to the appropriate page based on form type
       if (!signIn) {
         navigate("/verify-email");
       } else {
@@ -116,6 +130,7 @@ function Login() {
     }
   };
 
+  // Function to switch between sign-in and sign-up forms
   const handleFormSwitch = (isSignIn) => {
     setSignIn(isSignIn);
     setErrors({}); // Clear errors when switching forms
@@ -126,6 +141,7 @@ function Login() {
   return (
     <Components.AppWrapper>
       <Components.Container className="container">
+        {/* Sign-up form */}
         {!signIn && (
           <Components.SignUpContainer signinIn={signIn}>
             <Components.Form onSubmit={handleSubmit}>
@@ -218,6 +234,7 @@ function Login() {
             </Components.Form>
           </Components.SignUpContainer>
         )}
+        {/* Sign-in form */}
         {signIn && (
           <Components.SignInContainer signinIn={signIn}>
             <Components.Form onSubmit={handleSubmit}>
@@ -294,6 +311,7 @@ function Login() {
             </Components.Form>
           </Components.SignInContainer>
         )}
+        {/* Overlay container for switching between sign-in and sign-up */}
         <Components.OverlayContainer signinIn={signIn}>
           <Components.Overlay signinIn={signIn}>
             <Components.LeftOverlayPanel signinIn={signIn}>

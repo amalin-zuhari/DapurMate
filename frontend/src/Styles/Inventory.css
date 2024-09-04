@@ -1,3 +1,8 @@
+.inventory-container {
+  margin: 50px;
+  padding: 20px;
+}
+
 .summary-statistics {
   display: flex;
   justify-content: space-between; /* Distribute columns evenly */
@@ -45,7 +50,15 @@
   margin-right: 10px;
 }
 
-button {
+/* button {
+  margin-left: 10px;
+} */
+
+.editBtn {
+  margin-left: 10px;
+}
+
+.deleteBtn {
   margin-left: 10px;
 }
 
@@ -77,29 +90,4 @@ button {
 .inventory-modal .modal-content {
   text-align: left;
   margin-top: 10px !important;
-}
-
-.inventory-container {
-  margin: 50px auto; /* Centering the container */
-  padding: 20px;
-  max-width: 1500px; /* Set a maximum width for the container */
-  width: 100%; /* Allow it to shrink if needed */
-  overflow-x: hidden; /* Prevent horizontal overflow */
-}
-
-img {
-  max-width: 100%;
-  height: auto; 
-}
-
-table {
-  width: 100%; 
-  overflow-x: auto; 
-}
-
-.stat-box {
-  flex: 1;
-  min-width: 150px; 
-  max-width: 400px; 
-  overflow: hidden;
 }

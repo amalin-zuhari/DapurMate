@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 // Importing useNavigate from react-router-dom to programmatically navigate between routes.
+
 import '../../Styles/Recipe.css';
 
 const Recipe = () => {
@@ -24,7 +25,7 @@ const Recipe = () => {
     // useNavigate hook to navigate programmatically to different routes.
 
     useEffect(() => {
-        fetch('http://localhost:5000/recipe')
+        fetch('http://localhost:5000/api/recipe')
             // Fetching the list of recipes from the backend API.
 
             .then((response) => response.json())
@@ -129,7 +130,7 @@ const Recipe = () => {
                             style={{ cursor: 'pointer' }}
                         // Individual recipe card. Navigates to the recipe's detail page when clicked.
                         >
-                            <h2>{recipe.title}</h2>
+                            <h3>{recipe.title}</h3>
                             {/* Displaying the title of the recipe */}
 
                             <img src={recipe.imageUrl} alt={recipe.title} className="recipe-image" />

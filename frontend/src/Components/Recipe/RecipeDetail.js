@@ -9,6 +9,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 
 import '../../Styles/RecipeDetail.css';
 
+
 const RecipeDetail = () => {
     // RecipeDetail component definition
 
@@ -24,7 +25,7 @@ const RecipeDetail = () => {
     useEffect(() => {
         // useEffect hook to fetch the recipe data when the component mounts or when the ID changes.
 
-        fetch(`http://localhost:5000/recipe/${id}`)
+        fetch(`http://localhost:5000/api/recipe/${id}`)
             // Fetching the specific recipe data from the backend API using the recipe ID.
 
             .then((response) => response.json())
@@ -45,7 +46,7 @@ const RecipeDetail = () => {
         <div className="recipe-detail">
             {/* Container div for the RecipeDetail component with a class name */}
 
-            <button className="back-button" onClick={() => navigate('/')}>
+            <button className="back-button" onClick={() => navigate('/recipe')}>
                 <FaArrowLeft /> Back
             </button>
             {/* Back button that navigates back to the homepage. Uses an icon from react-icons. */}

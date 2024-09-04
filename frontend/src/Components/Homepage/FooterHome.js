@@ -3,7 +3,7 @@ import '../../Styles/Dashboard.css';
 
 const FooterHome = () => {
   return (
-    <footer className="footer-dapurmate">
+    <footer className="footerhome">
       <div className="footer-content">
         <p>© DapurMate 2024. All rights reserved.</p>
       </div>

@@ -1,118 +1,132 @@
+/* Import the Poppins font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+/* Apply Poppins font to all elements, and set default margin, padding, and box-sizing */
 * {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /* Use Poppins font */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
+/* Style for the body element */
 body {
-  background: #fff;
-  display: flex;
+  background: #fff; /* Set background color to white */
+  /* The following lines are commented out, but they center content horizontally and vertically */
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  align-items: center; */
+  height: 100vh; /* Make the body take up the full viewport height */
 }
 
+/* Style for h1 elements with class 'h1-sl' */
 .h1-sl {
-  color: #29a847;
-  margin-bottom: 0.5rem;
-  font-size: 1.75rem;
+  color: #29a847; /* Set text color to green */
+  margin-bottom: 0.5rem; /* Space below the heading */
+  font-size: 1.75rem; /* Set font size */
 }
 
+/* Style for the container of the shopping list form */
 .ShopListWrapper {
-  background: #fff;
-  margin-top: 5rem;
-  padding: 2rem;
-  border-radius: 5px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  background: #fff; /* Set background color to white */
+  margin-top: 5rem; /* Space above the wrapper */
+  padding: 2rem; /* Padding inside the wrapper */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  text-align: center; /* Center text inside the wrapper */
 }
 
+/* Style for the form element inside the ShopListWrapper */
 .ShopListForm {
-  width: 100%;
-  margin-bottom: 1rem;
+  width: 100%; /* Make the form take up full width */
+  margin-bottom: 1rem; /* Space below the form */
 }
 
+/* Style for input fields inside the shopping list form */
 .shopping-input {
-  outline: none;
-  background: none;
-  border: 1px solid #29a847;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  margin: 2px;
-  width: 500px;
-  color: #333;
-  border-radius: 5px;
+  outline: none; /* Remove default outline on focus */
+  background: none; /* No background color */
+  border: 1px solid #29a847; /* Green border */
+  padding: 0.5rem 1rem; /* Padding inside the input */
+  margin-top: 1rem; /* Space above the input */
+  margin-bottom: 2rem; /* Space below the input */
+  margin: 2px; /* Small margin */
+  width: 500px; /* Fixed width */
+  color: #333; /* Dark text color */
+  border-radius: 5px; /* Rounded corners */
 }
 
+/* Placeholder text color inside input fields */
 .shopping-input::placeholder {
-  color: #888;
+  color: #888; /* Light gray color */
 }
 
+/* Style for quantity and unit input fields */
 .quantity-input, 
 .unit-input {
-  width: 100px;
+  width: 100px; /* Fixed width */
 }
 
+/* Style for the submit button in the shopping list form */
 .shopping-btn {
-  background: #29a847;
-  color: #fff;
-  border: none;
-  padding: 0.55rem 1rem;
-  cursor: pointer;
-  border-radius: 5px;
+  background: #29a847; /* Green background */
+  color: #fff; /* White text color */
+  border: none; /* Remove default border */
+  padding: 0.55rem 1rem; /* Padding inside the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
 }
 
+/* Style for individual shopping list items */
 .ShoppingList {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #29a847;
-  color: #fff;
-  padding: 0.75rem 1rem;
-  border-radius: 5px;
-  margin-bottom: 1rem;
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between item content and icons */
+  align-items: center; /* Center items vertically */
+  background: #29a847; /* Green background */
+  color: #fff; /* White text color */
+  padding: 0.75rem 1rem; /* Padding inside the item */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 1rem; /* Space below each item */
 }
 
-.ShoppingList:hover{
-  cursor: pointer;
+/* Change cursor to pointer on hover for shopping list items */
+.ShoppingList:hover {
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
+/* Style for the trash icon */
 .fa-trash {
-  margin-left: 0.75rem;
+  margin-left: 0.75rem; /* Space to the left of the icon */
 }
 
-/* Style for incomplete items */
+/* Style for items marked as incomplete */
 .incompleted {
-  color: #fff;
-  cursor: pointer;
-  
-  
-  
+  color: #fff; /* White text color */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
-/* Style for completed items */
+/* Style for items marked as completed */
 .completed {
-  color: #c5ffdc; /* Lighter shade for completed items */
-  text-decoration: line-through; /* Strikethrough effect */
-  cursor: pointer;
+  color: #c5ffdc; /* Lighter shade of green */
+  text-decoration: line-through; /* Strikethrough text */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
+/* Hover effect for completed items */
 .completed:hover {
-  color: white;
-  cursor: pointer;
+  color: white; /* Change color to white on hover */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
-
+/* Style for container holding quantity and unit inputs */
 .quantity-unit {
-  display: flex;
-  justify-content: flex-end;
-  align-items: ce;
+  display: flex; /* Flexbox layout */
+  justify-content: flex-end; /* Align items to the end */
+  align-items: ce; /* Alignment for flex items (incorrect value 'ce') */
 }
 
+/* Style for edit and delete icons */
 .edit-icon,
 .delete-icon {
-  cursor: pointer;
+  cursor: pointer; /* Pointer cursor on hover */
 }
