@@ -1,0 +1,80 @@
+.inventory-container {
+  margin: 50px;
+  padding: 20px;
+}
+
+.summary-statistics {
+  display: flex;
+  justify-content: space-between; /* Distribute columns evenly */
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  flex: 1; /* Each stat-box will take equal width */
+  background-color: hsla(0, 0%, 70%, 0.449);
+  color: black;
+  font-weight: bold;
+  width: 400px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.stat-box.clickable {
+  cursor: pointer; /* Change cursor to pointer when clickable */
+}
+
+.stat-box:last-child {
+  margin-bottom: 0;
+}
+
+.actions-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 600px;
+  margin-right: 10px;
+}
+
+button {
+  margin-left: 10px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.editBtn {
+  margin-right: 20px;
+}
+
+/* Warning background for items nearing expiration */
+.bg-warning {
+  background-color: #fff3cd !important; /* Bootstrap warning color */
+  color: #856404; /* Warning text color */
+}
+
+/* Danger background for expired items */
+.bg-danger {
+  background-color: #f8d7da !important; /* Bootstrap danger color */
+  color: #721c24; /* Danger text color */
+}
+
+/* Text color for low stock */
+.text-danger {
+  color: #dc3545 !important; /* Bootstrap danger text color */
+}

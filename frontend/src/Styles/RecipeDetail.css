@@ -1,0 +1,206 @@
+.recipe-detail {
+    max-width: 800px;
+    /* Limits the maximum width of the recipe detail container to 800px */
+
+    margin: 0 auto;
+    /* Centers the container horizontally on the page */
+
+    padding: 20px;
+    /* Adds padding inside the container for spacing */
+
+    font-family: 'Poppins', sans-serif;
+    /* Applies the Poppins font to all text within the container */
+
+    text-align: center;
+    /* Centers the text horizontally */
+
+    background-color: #f9f9f9;
+    /* Sets a light gray background color for the container */
+
+    border-radius: 10px;
+    /* Rounds the corners of the container slightly */
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow for a slightly elevated effect */
+
+    position: relative;
+    /* Allows for positioning child elements, such as the back button, relative to this container */
+}
+
+.back-button {
+    display: inline-flex;
+    /* Displays the button as an inline-flex element, allowing for alignment of its contents */
+
+    align-items: center;
+    /* Vertically centers the contents (text and icon) within the button */
+
+    background-color: #29a847;
+    /* Sets the background color of the button to green (#29a847) */
+
+    color: #fff;
+    /* Sets the text color of the button to white */
+
+    border: none;
+    /* Removes the default border of the button */
+
+    padding: 10px 20px;
+    /* Adds padding inside the button for better spacing */
+
+    margin-bottom: 20px;
+    /* Adds margin below the button to separate it from other content */
+
+    border-radius: 5px;
+    /* Rounds the corners of the button slightly */
+
+    font-size: 1em;
+    /* Sets the font size of the button text to 1em */
+
+    cursor: pointer;
+    /* Changes the cursor to a pointer when hovering over the button */
+
+    transition: background-color 0.3s ease;
+    /* Adds a smooth transition effect when the background color changes */
+
+    text-decoration: none;
+    /* Removes the default text underline (if any) */
+
+    position: absolute;
+    /* Positions the button absolutely within the .recipe-detail container */
+
+    left: 20px;
+    /* Positions the button 20px from the left edge of the container */
+}
+
+.back-button:hover {
+    background-color: #248a3c;
+    /* Darkens the background color slightly when hovering over the button */
+}
+
+.back-button svg {
+    margin-right: 8px;
+    /* Adds space to the right of the SVG icon inside the button */
+}
+
+.recipe-detail h1 {
+    font-size: 2em;
+    /* Sets the font size of the heading to 2em */
+
+    margin-bottom: 20px;
+    /* Adds margin below the heading to separate it from other content */
+
+    color: #333;
+    /* Sets the text color of the heading to dark gray */
+}
+
+.recipe-detail img {
+    width: 100%;
+    /* Ensures the image takes up the full width of its container */
+
+    max-width: 600px;
+    /* Limits the maximum width of the image to 600px */
+
+    height: 300px;
+    /* Sets a fixed height for the image */
+
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+
+    border-radius: 10px;
+    /* Rounds the corners of the image slightly */
+
+    margin-bottom: 20px;
+    /* Adds margin below the image to separate it from other content */
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow for a slightly elevated effect */
+}
+
+.recipe-detail p {
+    font-size: 1.1em;
+    /* Sets the font size of the paragraph text to 1.1em */
+
+    line-height: 1.6;
+    /* Sets the line height to 1.6 for better readability */
+
+    color: #555;
+    /* Sets the text color to a medium gray */
+
+    margin: 10px 0;
+    /* Adds margin above and below the paragraph for spacing */
+
+    text-align: left;
+    /* Aligns the paragraph text to the left */
+}
+
+.recipe-detail p strong {
+    color: #333;
+    /* Sets the color of the bold text to dark gray */
+
+    font-weight: 600;
+    /* Sets the font weight of the bold text to 600 for emphasis */
+}
+
+/* Responsive design adjustments for screens 768px wide or less */
+@media (max-width: 768px) {
+    .recipe-detail {
+        padding: 15px;
+        /* Reduces padding around the recipe detail container */
+    }
+
+    .recipe-detail h1 {
+        font-size: 1.8em;
+        /* Reduces the font size of the heading */
+    }
+
+    .recipe-detail img {
+        height: 250px;
+        /* Reduces the height of the image */
+    }
+
+    .recipe-detail p {
+        font-size: 1em;
+        /* Reduces the font size of the paragraph text */
+    }
+
+    .back-button {
+        font-size: 0.9em;
+        /* Reduces the font size of the button text */
+
+        padding: 8px 16px;
+        /* Reduces the padding inside the button */
+    }
+}
+
+/* Further responsive design adjustments for screens 480px wide or less */
+@media (max-width: 480px) {
+    .recipe-detail {
+        padding: 10px;
+        /* Further reduces padding around the recipe detail container */
+    }
+
+    .recipe-detail h1 {
+        font-size: 1.5em;
+        /* Further reduces the font size of the heading */
+    }
+
+    .recipe-detail img {
+        height: 200px;
+        /* Further reduces the height of the image */
+    }
+
+    .recipe-detail p {
+        font-size: 0.9em;
+        /* Further reduces the font size of the paragraph text */
+    }
+
+    .back-button {
+        font-size: 0.8em;
+        /* Further reduces the font size of the button text */
+
+        padding: 6px 12px;
+        /* Further reduces the padding inside the button */
+
+        left: 10px;
+        /* Adjusts the left position of the button for smaller screens */
+    }
+}

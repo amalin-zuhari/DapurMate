@@ -1,0 +1,182 @@
+/* Importing Google Font 'Lilita One' for use in the sidebar logo text */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+/* Main sidebar styling */
+.sidebar-main {
+  background-color: white; /* Sidebar background color */
+  height: 100%; /* Full height to cover the viewport */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow effect on the right edge */
+  display: flex; /* Flexbox layout for inner content management */
+  flex-direction: column; /* Arrange inner content in a column */
+  justify-content: space-between; /* Space out items vertically */
+  transition: width 0.3s ease, left 0.3s ease; /* Smooth width and position transition for toggle effect */
+  position: fixed; /* Fixed positioning to remain in view on scroll */
+  left: 0; /* Align sidebar to the left of the viewport */
+  top: 0; /* Align sidebar to the top of the viewport */
+  z-index: 1000; /* High z-index to ensure the sidebar appears above other content */
+  width: 200px; /* Default width when the sidebar is expanded */
+}
+
+.sidebar-main.collapsed {
+  width: 80px; /* Reduced width when the sidebar is collapsed */
+}
+
+.logo-text-container {
+  display: flex; /* Flexbox to center content */
+  justify-content: center; /* Horizontally center the logo text */
+  align-items: center; /* Vertically center the logo text */
+  height: 80px; /* Height matches the sidebar width when collapsed */
+  width: 100%; /* Full width for centering */
+  margin-top: 20px; /* Margin to add space at the top */
+}
+
+.logo-text {
+  font-family: 'Lilita One', cursive; /* Font style from Google Fonts */
+  font-size: 2rem; /* Font size */
+  color: #29a847; /* Text color */
+  text-align: center; /* Center text horizontally */
+}
+
+.logo-text-collapsed {
+  font-family: 'Lilita One', cursive; /* Same font style */
+  font-size: 1rem; /* Smaller font size for collapsed state */
+  color: #29a847; /* Text color */
+  transform: rotate(-90deg); /* Rotate text 90 degrees for vertical alignment */
+  transform-origin: center; /* Rotate around the center */
+  white-space: nowrap; /* Prevent text wrapping */
+  text-align: center; /* Center text horizontally */
+  margin: 0; /* Remove any default margin */
+  line-height: 80px; /* Align text vertically */
+  width: 80px; /* Width matches the sidebar when collapsed */
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+}
+
+.sidebar-logo-container {
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Horizontally center the logo */
+  align-items: center; /* Vertically center the logo */
+  height: 150px; /* Set height for the logo area */
+  width: 100%; /* Full width for centering */
+  background-color: #fff; /* Background color */
+  margin-top: 20px; /* Margin for spacing */
+}
+
+.sidebar-logo {
+  display: block; /* Block display for centering */
+  margin: 0 auto; /* Center the image horizontally */
+  max-width: 100%; /* Ensure the image doesn't exceed the container width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.menu-wrapper {
+  flex: 1; /* Allow menu to grow and fill space */
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Horizontally center the menu */
+  align-items: center; /* Vertically center the menu */
+  padding: 10px 0; /* Padding for spacing */
+}
+
+/* Remove underline from sidebar navigation links */
+.ant-menu-item a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit parent text color */
+}
+
+/* Styling for hover effect on navigation links */
+.ant-menu-item a:hover {
+  color: #fff; /* Change text color on hover */
+}
+
+/* Main menu styling */
+.ant-menu {
+  background-color: rgb(255, 255, 255); /* White background */
+  border-right: none; /* Remove border on the right side */
+}
+
+/* Individual menu item styling */
+.ant-menu-item {
+  background-color: white; /* White background */
+}
+
+/* Hover effect for menu items */
+.ant-menu-item:hover {
+  background-color: #29a847; /* Background color on hover */
+  color: #fff; /* Text color on hover */
+}
+
+/* Styling for the selected menu item */
+.ant-menu-item-selected {
+  background-color: #29a847 !important; /* Background color for selected item */
+  color: #fff !important; /* Text color for selected item */
+}
+
+/* Footer button at the bottom of the sidebar */
+.sidebar-footer-button {
+  text-align: center; /* Center the button text */
+  margin-top: auto; /* Push to the bottom of the sidebar */
+  background-color: white; /* White background */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 24px; /* Font size */
+  padding-bottom: 20px; /* Padding for spacing */
+}
+
+/* Sidebar toggle button styling */
+.sidebar-toggle {
+  background-color: white; /* White background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 24px; /* Font size */
+}
+
+/* Main content styling */
+.main-content {
+  flex: 1; /* Allow main content to grow and fill remaining space */
+  transition: margin-left 0.3s ease; /* Smooth transition for margin change */
+  margin-left: 200px; /* Default left margin when sidebar is expanded */
+}
+
+/* Main content styling when the sidebar is open */
+.main-content.sidebar-open {
+  margin-left: 200px; /* Maintain left margin when sidebar is expanded */
+}
+
+/* Main content styling when the sidebar is collapsed */
+.main-content.sidebar-collapsed {
+  margin-left: 80px; /* Adjust left margin when sidebar is collapsed */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .sidebar-main {
+    width: 80px; /* Sidebar behaves as collapsed */
+  }
+
+  .sidebar-main.collapsed {
+    width: 40px; /* Further reduced width for smaller screens */
+  }
+
+  .main-content {
+    margin-left: 80px; /* Content adjusts to match sidebar collapsed state */
+  }
+
+  .main-content.sidebar-open {
+    margin-left: 80px; /* Maintain margin when sidebar is open on smaller screens */
+  }
+
+  .main-content.sidebar-collapsed {
+    margin-left: 40px; /* Adjust margin for collapsed sidebar on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-main {
+    width: 40px; /* Fully collapsed width */
+  }
+
+  .main-content {
+    margin-left: 40px; /* Content adjusts fully to the right */
+  }
+}

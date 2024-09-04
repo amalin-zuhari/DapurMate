@@ -1,0 +1,21 @@
+.cta-section {
+  background-color: #29a847;
+  color: white;
+  padding: 40px 0;
+}
+
+.cta-section h2 {
+  margin-bottom: 20px;
+}
+
+.cta-section .btn {
+  background-color: #fff;
+  color: #29a847;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-section .btn:hover {
+  background-color: #e5e5e5;
+  color: #29a847;
+}

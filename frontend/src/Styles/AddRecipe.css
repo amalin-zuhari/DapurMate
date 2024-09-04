@@ -1,0 +1,331 @@
+/* Background for the entire page */
+body {
+    background-color: #f4f7fa;
+    /* Soft and neutral background color for a clean and light look */
+
+    margin: 0;
+    /* Remove default margin from the body */
+
+    padding: 0;
+    /* Remove default padding from the body */
+
+    font-family: 'Poppins', sans-serif;
+    /* Use Poppins font for all text on the page */
+}
+
+/* Style for the Upload Image Label */
+.upload-label {
+    display: inline-block;
+    /* Display the label as an inline-block element to allow for padding and width */
+
+    padding: 10px 20px;
+    /* Add padding inside the label for better spacing */
+
+    background-color: #007BFF;
+    /* Set a blue background color for the label */
+
+    color: white;
+    /* Set the text color to white for contrast against the blue background */
+
+    border-radius: 4px;
+    /* Round the corners of the label slightly */
+
+    cursor: pointer;
+    /* Change the cursor to a pointer to indicate the label is clickable */
+
+    transition: background-color 0.3s ease;
+    /* Smooth transition effect when changing the background color on hover */
+
+    text-align: center;
+    /* Center the text within the label */
+
+    font-size: 1rem;
+    /* Set the font size for the label text */
+
+    margin-bottom: 15px;
+    /* Add some margin below the label to separate it from other elements */
+
+    width: 100%;
+    /* Make the label take up the full width of its container */
+
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+}
+
+.upload-label:hover {
+    background-color: #0056b3;
+    /* Darken the background color when hovering over the label */
+}
+
+.upload-label input[type="file"] {
+    display: none;
+    /* Hide the actual file input element, as it will be replaced by the custom label */
+}
+
+/* Style for the AddRecipe Form */
+.add-recipe {
+    max-width: 800px;
+    /* Limit the maximum width of the form to 800px */
+
+    margin: 20px auto;
+    /* Center the form horizontally and add margin at the top and bottom */
+
+    padding: 20px;
+    /* Add padding inside the form container */
+
+    background-color: #ffffff;
+    /* Set a white background for the form */
+
+    border-radius: 8px;
+    /* Slightly round the corners of the form */
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow to give the form a raised effect */
+
+    font-family: 'Poppins', sans-serif;
+    /* Ensure the form uses the Poppins font */
+
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+}
+
+.add-recipe h1 {
+    font-size: 2rem;
+    /* Set the font size for the form heading */
+
+    color: #343a40;
+    /* Use a dark gray color for the heading text */
+
+    margin-bottom: 20px;
+    /* Add margin below the heading to separate it from the form elements */
+
+    text-align: center;
+    /* Center the heading text */
+}
+
+.add-recipe form {
+    display: flex;
+    /* Use flexbox to layout the form elements */
+
+    flex-direction: column;
+    /* Stack the form elements vertically */
+
+    gap: 15px;
+    /* Add space between each form element */
+}
+
+.add-recipe input,
+.add-recipe select,
+.add-recipe textarea {
+    padding: 10px;
+    /* Add padding inside the input, select, and textarea elements */
+
+    font-size: 1rem;
+    /* Set the font size for the form elements */
+
+    border: 1px solid #ddd;
+    /* Use a light gray border for the form elements */
+
+    border-radius: 4px;
+    /* Slightly round the corners of the form elements */
+
+    width: 100%;
+    /* Make the form elements take up the full width of their container */
+
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+}
+
+.add-recipe textarea {
+    resize: vertical;
+    /* Allow the textarea to be resized vertically only */
+
+    min-height: 100px;
+    /* Set a minimum height for the textarea */
+}
+
+.ingredient-input {
+    display: flex;
+    /* Use flexbox to layout the ingredient input and button */
+
+    align-items: center;
+    /* Align the ingredient input and button along the center of the flexbox container */
+
+    gap: 10px;
+    /* Add space between the input and the button */
+}
+
+.ingredient-input input {
+    flex: 1;
+    /* Make the input take up the remaining space in the flexbox container */
+}
+
+.ingredient-input button {
+    padding: 5px 10px;
+    /* Add padding inside the button */
+
+    font-size: 0.9rem;
+    /* Set the font size for the button text */
+
+    color: white;
+    /* Set the text color to white for contrast against the red background */
+
+    background-color: #ff4d4d;
+    /* Set a red background color for the button */
+
+    border: none;
+    /* Remove the default border from the button */
+
+    border-radius: 4px;
+    /* Slightly round the corners of the button */
+
+    cursor: pointer;
+    /* Change the cursor to a pointer to indicate the button is clickable */
+}
+
+.ingredient-input button:hover {
+    background-color: #e60000;
+    /* Darken the background color when hovering over the button */
+}
+
+.add-recipe button[type="button"] {
+    padding: 10px;
+    /* Add padding inside the button */
+
+    font-size: 1rem;
+    /* Set the font size for the button text */
+
+    color: #fff;
+    /* Set the text color to white for contrast against the green background */
+
+    background-color: #4CAF50;
+    /* Set a green background color for the button */
+
+    border: none;
+    /* Remove the default border from the button */
+
+    border-radius: 4px;
+    /* Slightly round the corners of the button */
+
+    cursor: pointer;
+    /* Change the cursor to a pointer to indicate the button is clickable */
+
+    transition: background-color 0.3s ease;
+    /* Smooth transition effect when changing the background color on hover */
+}
+
+.add-recipe button[type="button"]:hover {
+    background-color: #45a049;
+    /* Darken the background color when hovering over the button */
+}
+
+.add-recipe button[type="submit"] {
+    padding: 12px;
+    /* Add padding inside the submit button */
+
+    font-size: 1.2rem;
+    /* Set the font size for the submit button text */
+
+    color: #fff;
+    /* Set the text color to white for contrast against the blue background */
+
+    background-color: #007BFF;
+    /* Set a blue background color for the submit button */
+
+    border: none;
+    /* Remove the default border from the button */
+
+    border-radius: 4px;
+    /* Slightly round the corners of the button */
+
+    cursor: pointer;
+    /* Change the cursor to a pointer to indicate the button is clickable */
+
+    transition: background-color 0.3s ease;
+    /* Smooth transition effect when changing the background color on hover */
+}
+
+.add-recipe button[type="submit"]:hover {
+    background-color: #0056b3;
+    /* Darken the background color when hovering over the submit button */
+}
+
+/* Responsive Design Adjustments for screens 768px wide or less */
+@media (max-width: 768px) {
+    .add-recipe {
+        padding: 15px;
+        /* Reduce padding around the form container */
+    }
+
+    .add-recipe h1 {
+        font-size: 1.5rem;
+        /* Reduce the font size of the heading */
+    }
+
+    .add-recipe input,
+    .add-recipe select,
+    .add-recipe textarea {
+        font-size: 0.9rem;
+        /* Reduce the font size of the form elements */
+
+        padding: 8px;
+        /* Reduce the padding inside the form elements */
+    }
+
+    .ingredient-input button {
+        padding: 4px 8px;
+        /* Reduce padding inside the ingredient button */
+
+        font-size: 0.8rem;
+        /* Reduce the font size of the button text */
+    }
+
+    .add-recipe button[type="button"],
+    .add-recipe button[type="submit"] {
+        padding: 10px;
+        /* Reduce padding inside the buttons */
+
+        font-size: 1rem;
+        /* Reduce the font size of the button text */
+    }
+}
+
+/* Further Responsive Adjustments for screens 480px wide or less */
+@media (max-width: 480px) {
+    .add-recipe {
+        padding: 10px;
+        /* Further reduce padding around the form container */
+    }
+
+    .add-recipe h1 {
+        font-size: 1.2rem;
+        /* Further reduce the font size of the heading */
+    }
+
+    .add-recipe input,
+    .add-recipe select,
+    .add-recipe textarea {
+        font-size: 0.8rem;
+        /* Further reduce the font size of the form elements */
+
+        padding: 6px;
+        /* Further reduce the padding inside the form elements */
+    }
+
+    .ingredient-input button {
+        padding: 3px 6px;
+        /* Further reduce padding inside the ingredient button */
+
+        font-size: 0.75rem;
+        /* Further reduce the font size of the button text */
+    }
+
+    .add-recipe button[type="button"],
+    .add-recipe button[type="submit"] {
+        padding: 8px;
+        /* Further reduce padding inside the buttons */
+
+        font-size: 0.9rem;
+        /* Further reduce the font size of the button text */
+    }
+}

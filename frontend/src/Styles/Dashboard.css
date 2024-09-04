@@ -1,0 +1,199 @@
+/* Dashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.dapurmate{
+  color: #29a847 !important;
+  font-family: 'Lilita One', cursive;
+  font-size: 3.5rem;
+}
+
+
+.btn-success {
+  background-color: #29a847;
+  border-color: #29a847;
+}
+
+.btn-success:hover {
+  background-color: #238038;
+  border-color: #238038;
+}
+
+.inventory-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.totalinv {
+  color: #36b37e !important;
+}
+
+.danger {
+  color: #f03e3e !important;
+}
+
+.warning {
+  color: #f59f00 !important;
+}
+
+.view-details-button {
+  margin-top: 0px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.card {
+  width: 100%;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #faf8f9;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid #dee2e6;
+  text-align: center;
+  color: #155724 !important;
+  font-weight: bolder;
+}
+
+.card-body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-title {
+  margin-bottom: 0;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #29a847;
+}
+
+.section-title {
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #333;
+}
+
+
+/* Custom green bullet points for the shopping list */
+.shopping-list-preview .list-group-item {
+  position: relative;
+  padding-left: 2rem;
+  border: none;
+  background-color: transparent;
+}
+
+.shopping-list-preview .list-group-item::before {
+  content: '•';
+  color: #29a847;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
+/* Tooltip styling */
+.tooltip-inner {
+  background-color: #29a847;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tooltip arrow styling */
+.bs-tooltip-top .tooltip-arrow::before,
+.bs-tooltip-right .tooltip-arrow::before,
+.bs-tooltip-bottom .tooltip-arrow::before,
+.bs-tooltip-left .tooltip-arrow::before {
+  border-color: transparent;
+  border-width: 6px;
+}
+
+.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #29a847;
+}
+
+.bs-tooltip-right .tooltip-arrow::before {
+  border-right-color: #29a847;
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #29a847;
+}
+
+.bs-tooltip-left .tooltip-arrow::before {
+  border-left-color: #29a847;
+}
+
+/* Tooltip fade-in animation */
+.tooltip {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tooltip.show {
+  opacity: 1;
+}
+
+.completed-item {
+  background-color: #d4edda;
+  color: #155724;
+  text-decoration: line-through;
+}
+
+.recipe-card {
+  width: 100%;
+  height: 300px; /* Set a fixed height for the card */
+  overflow: hidden; /* Ensures no content overflows the card */
+  border-radius: 10px; /* Rounded corners for aesthetics */
+  transition: transform 0.2s; /* Optional: Smooth transition for hover effect */
+  margin-bottom: 20px;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05); /* Optional: Slight zoom effect on hover */
+}
+
+.recipe-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  object-position: center; /* Centers the image within the container */
+  border-radius: 10px; /* Matches the card's rounded corners */
+  display: block; /* Ensures the image is treated as a block element, no extra spacing */
+}
+
+.footer-dapurmate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 0px;
+  color: #155724 !important;
+  
+}
+

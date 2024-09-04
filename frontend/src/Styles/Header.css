@@ -1,0 +1,40 @@
+/* Header styling */
+.custom-navbar {
+  background-color: white !important; /* Ensure the background is white */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #29a847 !important;
+  display: flex;
+  align-items: center; /* Center the text vertically with the image */
+}
+
+/* .navbar-brand .ms-3 {
+  margin-left: 5px; 
+} */
+
+/* Link styling */
+.nav-link {
+  color: #000 !important; /* Default link color */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.nav-link:hover {
+  color: #29a847 !important; /* Hover color */
+}
+
+/* Button styling */
+.signup-button {
+  color: white !important; /* Ensure the text is white */
+  background-color: #29a847 !important; /* Green background */
+  border: none; /* Remove border */
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #218838 !important; /* Darker green on hover */
+}

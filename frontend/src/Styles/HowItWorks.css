@@ -1,0 +1,11 @@
+.step-icon {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
+}
+
+.lead {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #2c3e50;
+}

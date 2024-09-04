@@ -1,0 +1,19 @@
+.input-field {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-field.error {
+  border-color: #f44336;
+  background-color: #ffe6e6;
+}
+
+/* Error message styles */
+.error-message {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 2px;
+  text-align: left; /* Ensures error messages are aligned left */
+}

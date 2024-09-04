@@ -1,0 +1,68 @@
+/* Card Styling */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Start content from the top */
+  align-items: center;
+  height: 100%; /* Ensure all cards stretch to the same height */
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  border-radius: 10px; /* Rounded corners for a smoother look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+  background-color: #fff; /* Ensure background is white */
+  border: none; /* Remove border */
+}
+
+/* Hover Effects for Cards */
+.card:hover {
+  transform: translateY(-5px); /* Slightly lift the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover for depth */
+}
+
+/* Set a consistent size for all images */
+.card-img-top {
+  width: 100%;
+  height: 150px; /* Ensure a consistent height for all images */
+  object-fit: cover; /* Ensures images cover the area without distortion */
+  border-top-left-radius: 10px; /* Match card corner rounding */
+  border-top-right-radius: 10px; /* Match card corner rounding */
+  margin-bottom: 1rem; /* Add margin to space out image from text */
+}
+
+/* Ensure consistent height for card body */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align text to the top */
+  align-items: center; /* Align text content in the center */
+  text-align: justify; /* Justify text within the card body */
+  width: 100%; /* Ensure the body takes full width */
+  flex-grow: 1; /* Allow card body to grow to fill space */
+  min-height: 220px; /* Set a minimum height for the card body to ensure consistency */
+}
+
+/* Uniform text block height */
+.card-text {
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+}
+
+.lead {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 120px; /* Adjust height for smaller screens */
+  }
+
+  .card-text {
+    min-height: auto; /* Allow text to adjust for smaller screens */
+  }
+}

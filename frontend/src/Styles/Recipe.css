@@ -1,0 +1,286 @@
+.recipe-container {
+  padding: 20px;
+  /* Adds padding inside the container to give some space around the content */
+
+  max-width: 1200px;
+  /* Limits the maximum width of the container to 1200px for a consistent layout */
+
+  margin: auto;
+  /* Centers the container horizontally on the page */
+
+  font-family: 'Poppins', sans-serif;
+  /* Applies the 'Poppins' font to all text within this container */
+}
+
+h1 {
+  text-align: center;
+  /* Centers the heading text horizontally */
+
+  margin-bottom: 40px;
+  /* Adds space below the heading to separate it from the content */
+
+  font-size: 2.5rem;
+  /* Sets the font size of the heading to 2.5rem for prominence */
+
+  color: #343a40;
+  /* Changes the color of the heading text to a dark gray (#343a40) */
+}
+
+.filter-section {
+  display: flex;
+  /* Uses Flexbox to layout the filter section items horizontally */
+
+  flex-wrap: wrap;
+  /* Allows items to wrap onto multiple lines if needed */
+
+  justify-content: space-between;
+  /* Distributes space evenly between the items, with equal space around them */
+
+  align-items: center;
+  /* Aligns the items vertically in the center */
+
+  margin-bottom: 20px;
+  /* Adds space below the filter section to separate it from the rest of the content */
+}
+
+.filter-section input,
+.filter-section select {
+  padding: 10px;
+  /* Adds padding inside the input and select elements for better readability */
+
+  font-size: 16px;
+  /* Sets the font size for the input and select elements */
+
+  flex: 1;
+  /* Allows the input and select elements to grow and fill available space */
+
+  min-width: 200px;
+  /* Sets a minimum width of 200px for the input and select elements */
+
+  margin-right: 10px;
+  /* Adds space to the right of the input and select elements for spacing */
+
+  margin-bottom: 10px;
+  /* Adds space below the input and select elements for better layout on small screens */
+}
+
+.add-recipe-btn {
+  padding: 10px 20px;
+  /* Adds padding inside the button to make it more clickable and visually appealing */
+
+  background-color: #29a847;
+  /* Sets the background color of the button to green (#29a847) */
+
+  color: white;
+  /* Changes the text color of the button to white for contrast against the green background */
+
+  border: none;
+  /* Removes the default border of the button */
+
+  border-radius: 5px;
+  /* Rounds the corners of the button slightly for a softer look */
+
+  font-size: 1rem;
+  /* Sets the font size of the button text to 1rem */
+
+  cursor: pointer;
+  /* Changes the cursor to a pointer when hovering over the button, indicating it's clickable */
+
+  transition: background-color 0.3s ease;
+  /* Adds a smooth transition effect when the background color changes on hover */
+
+  margin-left: 10px;
+  /* Adds space to the left of the button to align it with the other input fields */
+}
+
+.add-recipe-btn:hover {
+  background-color: #248a3c;
+  /* Changes the background color to a darker green (#248a3c) when the button is hovered over */
+}
+
+.recipe-grid {
+  display: grid;
+  /* Uses CSS Grid to layout the recipe cards in a grid format */
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Creates as many columns as will fit, with each column being at least 300px wide */
+
+  gap: 20px;
+  /* Adds space between the grid items (recipe cards) */
+
+  justify-content: center;
+  /* Centers the grid items horizontally */
+}
+
+.recipe-card {
+  background-color: #ffffff;
+  /* Sets the background color of each recipe card to white (#ffffff) */
+
+  border: 1px solid #ddd;
+  /* Adds a light gray border around each recipe card for separation */
+
+  border-radius: 8px;
+  /* Rounds the corners of the recipe card slightly */
+
+  padding: 20px;
+  /* Adds padding inside the recipe card for better spacing of content */
+
+  text-align: center;
+  /* Centers the text inside the recipe card */
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow to give the recipe card a raised, three-dimensional effect */
+
+  transition: transform 0.3s ease-in-out;
+  /* Adds a smooth transition effect when the recipe card is hovered over */
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  /* Lifts the recipe card slightly upwards when hovered over, adding a subtle visual effect */
+}
+
+.recipe-image {
+  width: 100%;
+  /* Ensures the recipe image takes up the full width of its container */
+
+  height: 200px;
+  /* Sets a fixed height for the recipe image */
+
+  object-fit: cover;
+  /* Ensures the image covers the entire area without distortion */
+
+  border-radius: 8px;
+  /* Rounds the corners of the image slightly to match the recipe card's border-radius */
+
+  margin-bottom: 15px;
+  /* Adds space below the image to separate it from the text */
+}
+
+.no-recipes-found {
+  text-align: center;
+  /* Centers the text horizontally in the "No recipes found" message */
+
+  padding: 50px;
+  /* Adds padding inside the container for the "No recipes found" message */
+
+  font-size: 1.5rem;
+  /* Sets the font size of the message text to 1.5rem */
+
+  color: #ff6f61;
+  /* Changes the text color to a reddish hue (#ff6f61) */
+
+  border: 2px dashed #ff6f61;
+  /* Adds a dashed border around the container with the same reddish hue */
+
+  border-radius: 8px;
+  /* Rounds the corners of the container */
+
+  margin-top: 20px;
+  /* Adds space above the container for better spacing */
+
+  animation: fadeIn 1s ease-in-out;
+  /* Applies a fade-in animation to the container */
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      /* Starts the animation with the container fully transparent */
+
+      transform: scale(0.9);
+      /* Starts the animation with the container slightly smaller */
+  }
+  100% {
+      opacity: 1;
+      /* Ends the animation with the container fully opaque */
+
+      transform: scale(1);
+      /* Ends the animation with the container at its full size */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Applies styles for screens 768px wide or less (typically tablets and small laptops) */
+
+  .recipe-card {
+      padding: 15px;
+      /* Reduces the padding inside the recipe card for smaller screens */
+  }
+
+  .recipe-image {
+      height: 150px;
+      /* Reduces the height of the recipe image for smaller screens */
+  }
+
+  .add-recipe-btn {
+      font-size: 0.9rem;
+      /* Reduces the font size of the button text for smaller screens */
+
+      padding: 8px 16px;
+      /* Reduces the padding inside the button for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Applies styles for screens 480px wide or less (typically mobile devices) */
+
+  .recipe-container {
+      padding: 10px;
+      /* Reduces the padding around the recipe container for very small screens */
+  }
+
+  .recipe-card {
+      padding: 10px;
+      /* Further reduces the padding inside the recipe card for very small screens */
+  }
+
+  .recipe-image {
+      height: 120px;
+      /* Further reduces the height of the recipe image for very small screens */
+  }
+
+  h1 {
+      font-size: 2rem;
+      /* Reduces the font size of the heading for very small screens */
+  }
+
+  .add-recipe-btn {
+      font-size: 0.8rem;
+      /* Further reduces the font size of the button text for very small screens */
+
+      padding: 6px 12px;
+      /* Further reduces the padding inside the button for very small screens */
+  }
+}
+
+.add-recipe-btn {
+  padding: 10px 20px;
+  /* Adds padding inside the button for better visual appearance and usability */
+
+  background-color: #29a847;
+  /* Sets the background color of the button to green (#29a847) */
+
+  color: white;
+  /* Changes the text color of the button to white for good contrast */
+
+  border: none;
+  /* Removes the default border of the button */
+
+  border-radius: 5px;
+  /* Rounds the corners of the button slightly for a more modern look */
+
+  font-size: 1rem;
+  /* Sets the font size of the button text to 1rem */
+
+  cursor: pointer;
+  /* Changes the cursor to a pointer when hovering over the button, indicating it's clickable */
+
+  transition: background-color 0.3s ease;
+  /* Adds a smooth transition effect when the background color changes on hover */
+}
+
+.add-recipe-btn:hover {
+  background-color: #248a3c;
+  /* Darkens the background color to a darker green (#248a3c) when the button is hovered over */
+}
