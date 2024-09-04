@@ -104,6 +104,7 @@
 .ant-menu-item:hover {
   background-color: #29a847; /* Background color on hover */
   color: #fff; /* Text color on hover */
+  
 }
 
 /* Styling for the selected menu item */
